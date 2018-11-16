@@ -1,0 +1,248 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        link(rel='shortcut icon', href='assets/ico/favicon.ico')
+        title 운동 어디가
+        link(href='https://fonts.googleapis.com/css?family=Noto+Sans+KR', rel='stylesheet')
+        // Bootstrap core CSS
+        link(href='assets/css/bootstrap.css', rel='stylesheet')
+        // Custom styles for this template
+        link(href='assets/css/style.css', rel='stylesheet')
+        link(href='assets/css/font-awesome.min.css', rel='stylesheet')
+        link(href='assets/js/fancybox/jquery.fancybox.css', rel='stylesheet')
+        link(href='assets/css/menuList_KKY.css', rel='stylesheet')
+        link(href='assets/css/menuList_gsh.css', rel='stylesheet')
+        script(src='assets/js/menuList_KKY.js')
+        // Just for debugging purposes. Don't actually copy this line!
+        //if lt IE 9
+          script(src='../../assets/js/ie8-responsive-file-warning.js')
+        // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+        //if lt IE 9
+          script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+          script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    body(data-spy='scroll', data-offset='0', data-target='#theMenu')
+        // Menu
+        // <nav class="menu" id="theMenu">
+        // <div class="menu-wrap">
+        // <h1 class="logo"><a href="index.html#home">DSGN NYC</a></h1>
+        // <i class="fa fa-times menu-close"></i>
+        // <a href="#home" class="smoothScroll">Home</a>
+        // <a href="#about" class="smoothScroll">About</a>
+        // <a href="#portfolio" class="smoothScroll">Portfolio</a>
+        // <a href="#services" class="smoothScroll">Services</a>
+        // <a href="#contact" class="smoothScroll">Contact</a>
+        // <a href="#"><i class="fa fa-facebook"></i></a>
+        // <a href="#"><i class="fa fa-twitter"></i></a>
+        // <a href="#"><i class="fa fa-dribbble"></i></a>
+        // <a href="#"><i class="fa fa-envelope"></i></a>
+        // </div>
+        //
+        // &lt;!&ndash; Menu button &ndash;&gt;
+        // <div id="menuToggle"><i class="fa fa-bars"></i></div>
+        // </nav>
+        .container
+            .row
+                .col-xs-12.col-sm-9
+                    img.logo-menulist.img-responsive(src='./assets/img/ediya.png')
+                    form(action='/search', method='get', enctype='multipart/form-data')
+                        input.searchBox(type='text', name="address", placeholder='주소를 입력하세요.')
+                        button.btn.btn-default.searchBtn(onclick='submit', aria-label='Left Align')
+                            span.glyphicon.glyphicon-send(aria-hidden='true')
+                .col-md-3.rightMenu
+                    span.menuText 매장등록
+                    img.profile.img-responsive(src='./assets/img/pic-t3.jpg')
+            // --/row --
+        // --/container --
+        .container
+            .row
+                hr
+                button.btn.btn-primary.cateBtn(type='button') 헬스/요가/필라테스
+                button.btn.btn-primary.cateBtn(type='button') 격투기
+                button.btn.btn-primary.cateBtn(type='button') 농구/길거리
+                button.btn.btn-default.cateBtn(type='button') 수영
+                button.btn.btn-default.cateBtn(type='button') 풋살/축구
+                button.btn.btn-default.cateBtn(type='button') 테니스
+                hr
+            // --/row --
+        // --/container --
+        // -- PORTFOLIO SECTION --
+        section#portfolio(name='portfolio')
+        .container
+            .row
+                .col-xs-8
+                    p= "'"+add+"' 검색 결과보기"
+                    - for(var i=0;i<shop.length;i++)
+                        .col-lg-12
+                            .col-lg-4.proc
+                                img.img-responsive(src="./"+shop[i].imageStore[0].image_url, alt='')
+                            .col-lg-8.proc
+                                h3.notosnas-regular=shop[i].shopName
+                                p.notosnas-regular=shop[i].text
+                                p.notosnas-regular=shop[i].address
+
+                #resultMap(style='height:500px; width:30%; right: 0; top: 0;')
+            // --/row --
+        // --/container --
+        #contactwrap
+            .container
+                .row
+                    .col-lg-3.col-lg-offset-11
+                        p 운동어디가
+                        p
+                            small
+                                | Tel. 010-2760-2021
+                                br
+                                | 						Mail. gil9084@gmail.com
+                                br
+                // --/row --
+            // /container
+        //
+          Bootstrap core JavaScript
+          ==================================================
+        // Placed at the end of the document so the pages load faster
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='assets/js/classie.js')
+        script(src='assets/js/bootstrap.min.js')
+        script(src='assets/js/smoothscroll.js')
+        script(src='assets/js/jquery.stellar.min.js')
+        script(src='assets/js/fancybox/jquery.fancybox.js')
+        script(src='assets/js/main.js')
+        script(src='assets/js/menuList_KKY.js')
+        script.
+            $(function(){
+                $.stellar({
+                    horizontalScrolling: false,
+                    verticalOffset: 40
+                });
+            });
+        script(type='text/javascript').
+            $(function() {
+                //    fancybox
+                jQuery(".fancybox").fancybox();
+            });
+        script(type='text/javascript').
+            var map;
+            function initialize() {
+                var mapLocation = new google.maps.LatLng('36.628747', '127.455257'); // 지도에서 가운데로 위치할 위도와 경도
+                var markLocation = new google.maps.LatLng('36.628747', '127.455257'); // 마커가 위치할 위도와 경도
+                var mapOptions = {
+                    center: mapLocation, // 지도에서 가운데로 위치할 위도와 경도(변수)
+                    zoom: 13, // 지도 zoom단계
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                map = new google.maps.Map(document.getElementById("resultMap"), // id: map-canvas, body에 있는 div태그의 id와 같아야 함
+                    mapOptions);
+                // 마커로 사용할 이미지 주소
+            }
+            //google.maps.event.addDomListener(window, 'load', initialize);
+        script(src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC6QD2MCH_LI-ZttQNP3sKFklynSotGA3E&callback=initialize')
+        script(src='https://cdn.sobekrepository.org/includes/gmaps-markerwithlabel/1.9.1/gmaps-markerwithlabel-1.9.1.min.js')
+        script(src = 'js/juso/menu_list_marking_GSH.js')
+        script(type='text/javascript').
+            markerCreate('!{JSON.stringify(shop2)}',map);
+            //GoogleMap 코드
+            //
+            // $(function(){
+            //
+            //     var mapOffset = $( '.scroll-menu' ).offset();
+            //     $("#mapChkbox").change(function(){
+            //
+            //         if($("#mapChkbox").is(":checked")){
+            //             if(document.getElementById('menuPic').classList.contains("col-12")){
+            //                 document.getElementById('menuPic').classList.remove("col-12")
+            //                 document.getElementById('menuPic').classList.add("col-9")
+            //             }
+            //             if(document.getElementById('resultMap').classList.contains('mapInvisible')){
+            //                 document.getElementById('resultMap').classList.remove('mapInvisible')
+            //             }
+            //             mapOffset = $( '.scroll-menu' ).offset();
+            //
+            //         }else{
+            //             if(document.getElementById('menuPic').classList.contains("col-9")){
+            //                 document.getElementById('menuPic').classList.remove("col-9")
+            //                 document.getElementById('menuPic').classList.add("col-12")
+            //             }
+            //             if(document.getElementById('resultMap').classList.contains('mapInvisible')==0){
+            //                 document.getElementById('resultMap').classList.add('mapInvisible')
+            //             }
+            //         }
+            //     });
+            //
+            //     $(window).scroll(function(){  //스크롤하면 아래 코드 실행
+            //         if (matchMedia("screen and (min-width: 960px)").matches) {
+            //
+            //             if( $( document ).scrollTop() > mapOffset.top ){
+            //                 $(".scroll-menu").addClass("scroll-fixed");
+            //             }else{
+            //                 $(".scroll-menu").removeClass("scroll-fixed");
+            //             }
+            //         }
+            //     });
+            // });
+            // //Map 스크롤시 고정시키는 JAVASCRIPTS
+            //
+            //
+            // $(window).on("resize",function(){
+            //     $(".lgMapDiv").hide();
+            //     $(".mapIcon").show();
+            //     if (!matchMedia("screen and (min-width: 960px)").matches) {
+            //         if(document.getElementById('menuPic').classList.contains("col-9")){
+            //             document.getElementById('menuPic').classList.remove("col-9")
+            //             document.getElementById('menuPic').classList.add("col-12")
+            //         }
+            //         if(document.getElementById('resultMap').classList.contains('mapInvisible')==0){
+            //             document.getElementById('resultMap').classList.add('mapInvisible')
+            //         }
+            //         if(document.getElementById('resultMap').classList.contains("col-3")){
+            //             document.getElementById('resultMap').classList.remove("col-3");
+            //         }
+            //         if(!document.getElementById('resultMap').classList.contains("col-10")){
+            //             document.getElementById('resultMap').classList.add("col-10");
+            //         }
+            //
+            //         if(document.getElementById('resultMap').classList.contains("scroll-fixed")){
+            //             $(".scroll-menu").removeClass("scroll-fixed");
+            //         }
+            //         if(!document.getElementById('resultMap').classList.contains("mobile-fixed")){
+            //             $(".scroll-menu").addClass("mobile-fixed");
+            //         }
+            //
+            //         if($("#mapChkbox").is(":checked")){
+            //             $("#mapChkbox").attr("checked",false);
+            //         }
+            //     }
+            //     else{
+            //         $(".mapIcon").hide();
+            //         $(".lgMapDiv").show();
+            //
+            //         if(document.getElementById('resultMap').classList.contains('mapInvisible')==0){
+            //             document.getElementById('resultMap').classList.add('mapInvisible')
+            //         }
+            //         if(document.getElementById('resultMap').classList.contains("col-10")){
+            //             document.getElementById('resultMap').classList.remove("col-10");
+            //             document.getElementById('resultMap').classList.add("col-3");
+            //         }
+            //
+            //         if(document.getElementById('resultMap').classList.contains("mobile-fixed")){
+            //             $(".scroll-menu").removeClass("mobile-fixed");
+            //         }
+            //
+            //     }
+            // }).resize();
+            //
+            // $(".mapIcon").click(function(){
+            //     if(document.getElementById('resultMap').classList.contains('mapInvisible')){
+            //         document.getElementById('resultMap').classList.remove('mapInvisible');
+            //     }
+            //     else{
+            //         document.getElementById('resultMap').classList.add('mapInvisible');
+            //     }
+            // });
+            //
+            //
+            //

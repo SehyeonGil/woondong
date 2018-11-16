@@ -1,0 +1,106 @@
+.headText{
+	text-align:center;
+	font-weight:800 !important;
+	font-size: 40px;
+	font-family: "Oswald", sans-serif;
+	color:#FFFFFF;
+}
+.subText{
+	text-align:center;
+	font-weight:800 !important;
+	font-size: 30px;
+	font-family: "Oswald", sans-serif;
+	color:#FFFFFF;
+}
+.searchBox {
+	margin-top:15px;
+	float:none;
+	border-radius:5px;
+	padding: 6px;
+	border:2px solid gray;
+	/*margin-right: 16px;*/
+	font-size: 17px;
+	width:60%;
+	height:40px;
+}
+.searchBtn{
+	width:15%;
+	height:40px;
+	/*color:#0DB849;*/
+	font-size:20px;
+	/*background-color:#025F74;*/
+}
+
+.headWrap {
+	background: url(../img/back.jpg) no-repeat center top;
+	margin-top: 0px;
+	padding-top:300px;
+	text-align:center;
+	/*background-attachment: relative;*/
+	background-position: center center;
+	min-height: 600px;
+	width: 100%;
+
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	background-size: 100%;
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.menuText{
+	line-height: 20px;
+	vertical-align: middle;
+	font-size:20px;
+	font-weight:600;
+}
+.rightMenu{
+	float:right;
+}
+.logo {
+	display:inline;
+	width: 70px;
+	height: 70px;
+	border: 5px solid #FFF;
+}
+.profile {
+	display:inline;
+	width: 70px;
+	height: 70px;
+	border: 5px solid #FFF;
+	border-radius: 50%;
+}
+.cateBtn{
+	margin:5px;
+}
+body, html{
+	width: 100%;
+	height: 100%;
+
+}
+#resultMap {
+	width: 100%;
+	height: 100%;
+}
+@media screen and (max-width: 768px) {
+	/*input[type=text] {*/
+		/*float: none;*/
+		/*display: block;*/
+		/*text-align: left;*/
+		/*width: 100%;*/
+		/*margin: 0;*/
+		/*padding: 14px;*/
+	/*}*/
+	.headText{
+		font-size:25px;
+	}
+	.rightMenu{
+		display:none;
+	}
+	.subText{
+		font-size:15px;
+	}
+}

@@ -1,0 +1,117 @@
+doctype html
+html(lang='en')
+    head
+        // SITE TITTLE
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title Register Chef
+        // PLUGINS CSS STYLE
+        link(href='../plugins/jquery-ui/jquery-ui.min.css', rel='stylesheet')
+        // Bootstrap
+        link(href='../plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+        // Font Awesome
+        link(href='../plugins/font-awesome/css/font-awesome.min.css', rel='stylesheet')
+        // Select 2
+        link(href='../plugins/selectbox/select_option1.css', rel='stylesheet')
+        // Owl Carousel
+        link(href='../plugins/owl-carousel/assets/owl.carousel.min.css', rel='stylesheet', media='screen')
+        // Owl Carousel Theme
+        link(href='../plugins/owl-carousel/assets/owl.theme.green.min.css', rel='stylesheet', media='screen')
+        // Fancy Box
+        link(href='../plugins/fancybox/jquery.fancybox.pack.css', rel='stylesheet')
+        // Datepicker
+        link(href='../plugins/datepicker/datepicker.min.css', rel='stylesheet')
+        // CUSTOM CSS
+        link(href='../stylesheets/style_HNH.css', rel='stylesheet')
+        link(href='../stylesheets/uploadFile_KKY.css', rel='stylesheet')
+        // FAVICON
+        link(href='../img/favicon.png', rel='shortcut icon')
+
+    body.body-wrapper
+        form(action='/register', method='post', enctype='multipart/form-data')
+            section.popular-deals.section
+                .container
+                    .row
+                        .col-md-12
+                            .container
+                                .row
+                                    .col-md-8.offset-md-2
+                                        // Store name
+                                        .form-group
+                                            label(for='store_name') 매장 이름
+                                            input#store_name.form-control(type='text', name='shopName')
+                                        // Store address
+                                        .form-group
+                                            label(for='store_add') 매장 주소
+                                            .row
+                                                .col-md-9
+                                                    input#store_add.form-control(type='text', name='address', readonly='')
+                                                    input#siNm(type='hidden', name='siNm', readonly='')
+                                                    input#entX(type='hidden', name='x', readonly='')
+                                                    input#entY(type='hidden', name='y', readonly='')
+                                                .col-md-2
+                                                    button.btn.btn-main(type="button", onclick='goPopup()') 주소검색
+                                        // Introduce Store
+                                        .form-group.mb-30
+                                            label(for='store_intro') 매장 소개
+                                            textarea#store_intro.form-control(rows='5', name='text', cols='100', placeholder='')
+                                        .form-group.row.col-md-12
+                                            label.control-label.requiredField.label-title 매장 이미지
+                                            .page.justify-content-center(style='margin-top: 10px;')
+                                                // Our File Inputs
+                                                .wrap-custom-file
+                                                    input#image1(type='file', name='imageShop', accept='.gif, .jpg, .png, .jpeg')
+                                                    label(for='image1')
+                                                        span Select Image
+                                                        i.fa.fa-plus-circle
+                                                .wrap-custom-file
+                                                    input#image2(type='file', name='imageShop', accept='.gif, .jpg, .png, .jpeg')
+                                                    label(for='image2')
+                                                        span Select Image
+                                                        i.fa.fa-plus-circle
+                                                .wrap-custom-file
+                                                    input#image3(type='file', name='imageShop', accept='.gif, .jpg, .png, .jpeg')
+                                                    label(for='image3')
+                                                        span Select Image
+                                                        i.fa.fa-plus-circle
+                                                .wrap-custom-file
+                                                    input#image4(type='file', name='imageShop', accept='.gif, .jpg, .png, .jpeg')
+                                                    label(for='image4')
+                                                        span Select Image
+                                                        i.fa.fa-plus-circle
+                                                    // End Page Wrap
+                                            input(type='radio', name='type', value='1', checked='checked')
+                                            | 헬스
+                                            input(type='radio', name='type', value='2')
+                                            |격투기
+                                            input(type='radio', name='type', value='3')
+                                            |농구
+                                            input(type='radio', name='type', value='4')
+                                            |축구
+                                            input(type='radio', name='type', value='6')
+                                            |테니스
+                                            input(type='radio', name='type', value='5')
+                                            |수영
+
+            .row.text-center
+                .col-md-12.col-lg-12
+                    button.btn.btn-main.mt-30(onclick='submit', style='background-color:#22ac38') REGISTER
+
+        script(src='../plugins/jquery/jquery.min.js')
+        script(src='../plugins/jquery-ui/jquery-ui.min.js')
+        script(src='../plugins/tether/js/tether.min.js')
+        script(src='../plugins/raty/jquery.raty-fa.js')
+        script(src='../plugins/bootstrap/js/bootstrap.min.js')
+        script(src='../plugins/selectbox/jquery.selectbox-0.1.3.min.js')
+        script(src='../plugins/owl-carousel/owl.carousel.min.js')
+        script(src='../plugins/fancybox/jquery.fancybox.pack.js')
+        script(src='../plugins/smoothscroll/SmoothScroll.min.js')
+        script(src='../plugins/bootstrap-notify/bootstrap-notify.min.js')
+        script(src='../js/custom.js')
+        script(type='text/javascript', src='http://code.jquery.com/jquery-2.1.0.min.js')
+        script(src='../js/register_HNH.js')
+        script(src='../js/UploadFile_KSW.js')
+        script(src='../js/MenuSubmit_KSW.js')
+        script(src='../js/juso/juso_GSH.js')
+        script(src='../plugins/proj4js/proj4js-combined.js')

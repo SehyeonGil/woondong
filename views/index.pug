@@ -1,0 +1,131 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='shortcut icon', href='assets/ico/favicon.ico')
+    title 운동 어디가
+    link(href='https://fonts.googleapis.com/css?family=Noto+Sans+KR', rel='stylesheet')
+    // Bootstrap core CSS
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='assets/css/style.css', rel='stylesheet')
+    link(href='assets/css/font-awesome.min.css', rel='stylesheet')
+    link(href='assets/js/fancybox/jquery.fancybox.css', rel='stylesheet')
+    link(href='assets/css/main_kky.css', rel='stylesheet')
+    link(href='assets/css/main_gsh.css', rel='stylesheet')
+    // Just for debugging purposes. Don't actually copy this line!
+    //if lt IE 9
+      script(src='../../assets/js/ie8-responsive-file-warning.js')
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body(data-spy='scroll', data-offset='0', data-target='#theMenu')
+    // Menu
+    //
+      <nav class="menu" id="theMenu">
+      <div class="menu-wrap">
+      <h1 class="logo"><a href="index.html#home">DSGN NYC</a></h1>
+      <i class="fa fa-times menu-close"></i>
+      <a href="#home" class="smoothScroll">Home</a>
+      <a href="#about" class="smoothScroll">About</a>
+      <a href="#portfolio" class="smoothScroll">Portfolio</a>
+      <a href="#services" class="smoothScroll">Services</a>
+      <a href="#contact" class="smoothScroll">Contact</a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-dribbble"></i></a>
+      <a href="#"><i class="fa fa-envelope"></i></a>
+      </div>
+      <div id="menuToggle"><i class="fa fa-bars"></i></div>
+      </nav>
+    section#home(name='home')
+    .main-back
+      .headWrap.center-block
+        .container
+          .row
+            .logo-div
+              img.logo-main(src='./assets/img/undong.png')
+          .row
+            .center-block
+              p.headText 당신을 위한 최고의 스포츠센터를 찾으세요.
+              p.subText 청주의 훌륭한 체육관들을 쉽게 한눈에 비교할 수 있습니다.
+          .row
+            .col-lg-6.col-md-offset-3
+              form(action='/search', method='get', enctype='multipart/form-data')
+                input.searchBox(type='text', name='address', placeholder='주소를 입력하세요.')
+                button.btn.btn-default.searchBtn(aria-label='Left Align', onclick='submit')
+                  span.glyphicon.glyphicon-send(aria-hidden='true')
+              // <input class="img-button" type="button">
+          // --/row --
+        // --/container --
+      // --/headerwrap --
+    // -- PORTFOLIO SECTION --
+    section#portfolio(name='portfolio')
+    #portfoliowrap
+      .container
+        .row
+          .col-lg-4
+            h1.notosnas-bold-ediya 카테고리 검색
+        .row.mt.centered
+          .col-lg-4.proc
+            img.category(src='./assets/img/workout.png')
+            h3.notosnas-bold 헬스/필라테스/요가
+          .col-lg-4.proc
+            img.category(src='./assets/img/boxing-gloves.png')
+            h3.notosnas-bold 격투기
+          .col-lg-4.proc
+            img.category(src='./assets/img/basketball.png')
+            h3.notosnas-bold 농구 / 길거리 농구
+          .col-lg-4.proc
+            img.category(src='./assets/img/football.png')
+            h3.notosnas-bold 풋살 / 축구
+          .col-lg-4.proc
+            img.category(src='./assets/img/swimming.png')
+            h3.notosnas-bold 수영
+          .col-lg-4.proc
+            img.category(src='./assets/img/tennis.png')
+            h3.notosnas-bold 테니스
+        // --/row --
+      // --/container --
+    // --/Portfoliowrap --
+    #contactwrap
+      .container
+        .row
+          .col-lg-3.col-lg-offset-11
+            p 운동어디가
+            p
+              small
+                | Tel. 010-2760-2021
+                br
+                | 						Mail. gil9084@gmail.com
+                br
+        // --/row --
+      // /container
+    //
+      Bootstrap core JavaScript
+      ==================================================
+    // Placed at the end of the document so the pages load faster
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script(src='assets/js/classie.js')
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/smoothscroll.js')
+    script(src='assets/js/jquery.stellar.min.js')
+    script(src='assets/js/fancybox/jquery.fancybox.js')
+    script(src='assets/js/main.js')
+    script.
+        $(function(){
+            $.stellar({
+                horizontalScrolling: false,
+                verticalOffset: 40
+            });
+        });
+    script(type='text/javascript').
+        $(function() {
+            //    fancybox
+            jQuery(".fancybox").fancybox();
+        });

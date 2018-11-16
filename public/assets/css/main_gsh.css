@@ -1,0 +1,42 @@
+.category{
+	max-height: 150px;
+	width: auto;
+}
+.notosnas-bold{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 800;
+}
+.notosnas-bold-ediya{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 800;
+	color: #192b69;
+	font-size: 50px;
+}
+
+.logo-div{
+	padding-top:30px;
+	padding-bottom:220px;
+	padding-right:10px;
+	float:right;
+}
+
+.logo-main{
+	height: auto;
+	max-width: 150px;
+	-webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+}
+
+.main-back{
+	background-color: black;
+}
+
+input.img-button {
+        background: url(../img/button.png) no-repeat;
+        border: none;
+        width: 80px;
+        height: auto;
+        cursor: pointer;
+      }
