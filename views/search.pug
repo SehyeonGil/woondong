@@ -17,6 +17,8 @@ html(lang='en')
         link(href='assets/js/fancybox/jquery.fancybox.css', rel='stylesheet')
         link(href='assets/css/menuList_KKY.css', rel='stylesheet')
         link(href='assets/css/menuList_gsh.css', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+
         script(src='assets/js/menuList_KKY.js')
         // Just for debugging purposes. Don't actually copy this line!
         //if lt IE 9
@@ -74,7 +76,7 @@ html(lang='en')
         section#portfolio(name='portfolio')
         .container
             .row
-                .col-xs-8
+                .col-xs-12
                     p= "'"+add+"' 검색 결과보기"
                     - for(var i=0;i<shop.length;i++)
                         .col-lg-12
@@ -85,7 +87,11 @@ html(lang='en')
                                 p.notosnas-regular=shop[i].text
                                 p.notosnas-regular=shop[i].address
 
-                #resultMap(style='height:500px; width:30%; right: 0; top: 0;')
+                #resultMap(style='display:none; height:70%; width:80%; right: 10%; top: 10%;')
+                button#mapBtn.mapIcon.btn.btn-primary(type='button')
+                    i.material-icons room
+
+
             // --/row --
         // --/container --
         #contactwrap
@@ -113,6 +119,10 @@ html(lang='en')
         script(src='assets/js/fancybox/jquery.fancybox.js')
         script(src='assets/js/main.js')
         script(src='assets/js/menuList_KKY.js')
+        script.
+            $('#mapBtn').click(function () {
+                $('#resultMap').toggle();
+            });
         script.
             $(function(){
                 $.stellar({
