@@ -97,5 +97,5 @@ html, body {
   padding: 0;
 }
 .material-icons {
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility; !important
 }
