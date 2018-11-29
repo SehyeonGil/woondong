@@ -143,6 +143,7 @@ html(lang='en')
                 var mapOptions = {
                     center: mapLocation, // 지도에서 가운데로 위치할 위도와 경도(변수)
                     zoom: 13, // 지도 zoom단계
+                    gestureHandling: 'greedy',
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
                 map = new google.maps.Map(document.getElementById("resultMap"), // id: map-canvas, body에 있는 div태그의 id와 같아야 함
